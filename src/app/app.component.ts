@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { ApiService } from './services/api.service';
+import { Observable } from 'rxjs';
+import { ApiData } from './Models/apiDataContext';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +9,21 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'angular-front';
+  constructor(private readonly apiService:ApiService){}
+  title;
+  appSource:any;
+  welcomMessageText = "Hello the World!";
+
+  
+  ngOnInit(){
+    this.apiService.getApiContext().subscribe(data =>{
+      console.log("Api Works; "+ data);
+      this.appSource = data["api-back"];
+    });
+
+    if(this.appSource == null){  
+      this.appSource = "None";
+    };
+    this.title = 'app-front';
+  }
 }
