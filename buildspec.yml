@@ -1,5 +1,8 @@
 version: 0.2
 
+env:
+    variables:
+      S3_BUCKET: "http://ss3stock.s3-website.eu-west-3.amazonaws.com"
 phases:
     install:
         runtime-versions:
@@ -14,4 +17,4 @@ phases:
         commands:
             - aws s3 rm s3://ss3stock --recursive
             # Copy files from dist to S3
-            - aws s3 cp ./dist/fluxnews-front s3://$ss3stock --recursive
+            - aws s3 cp ./dist/fluxnews-front s3://$S3_BUCKET --recursive
