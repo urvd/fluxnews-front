@@ -1,0 +1,14 @@
+version: 0.2
+
+phases:
+    install:
+        - apt-get update
+    pre_build:
+        commands:
+            -npm install
+    build:
+        commands:
+            - npm run build
+    post_build:
+        commands:
+            - aws s3 sync ./dist/angular-front s://ss3stock --acl 'public-read' --delete

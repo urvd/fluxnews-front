@@ -1,7 +1,5 @@
 import { Component } from '@angular/core';
 import { ApiService } from './services/api.service';
-import { Observable } from 'rxjs';
-import { ApiData } from './Models/apiDataContext';
 
 @Component({
   selector: 'app-root',
