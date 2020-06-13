@@ -12,4 +12,4 @@ phases:
             - npm run build
     post_build:
         commands:
-            - aws s3 sync ./dist/angular-front s://ss3stock --acl 'public-read' --delete
+            - aws s3 sync ./dist/angular-front s3://ss3stock --acl 'public-read' --delete
