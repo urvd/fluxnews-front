@@ -2,14 +2,15 @@ version: 0.2
 
 phases:
     install:
-        commands:
-            - apt-get update
+        runtime-versions:
+            nodejs: 12
     pre_build:
         commands:
             - npm install
+            - npm install -g @angular/cli
     build:
         commands:
-            - npm run build
+            - npm run build --prod --aot
     post_build:
         commands:
-            - aws s3 sync ./dist/angular-front s3://ss3stock --acl 'public-read' --delete
+            - aws s3 sync ./dist/angular-front s3://ss3stock --delete
