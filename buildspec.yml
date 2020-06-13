@@ -7,10 +7,9 @@ phases:
     pre_build:
         commands:
             - npm install
-            - npm install -g @angular/cli
     build:
         commands:
             - npm run build --prod --aot
     post_build:
         commands:
-            - aws s3 sync ./dist/angular-front s3://ss3stock --delete
+            - aws s3 sync ./dist/fluxnews-front s3://ss3stock --delete
