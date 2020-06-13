@@ -2,7 +2,7 @@ version: 0.2
 
 env:
     variables:
-      S3_BUCKET: "http://ss3stock.s3-website.eu-west-3.amazonaws.com"
+      S3_BUCKET: "ss3stock.s3-website.eu-west-3.amazonaws.com"
 phases:
     install:
         runtime-versions:
