@@ -1,8 +1,6 @@
 version: 0.2
 
 phases:
-    install:
-        - apt-get update
     pre_build:
         commands:
             -npm install
