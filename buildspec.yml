@@ -14,4 +14,4 @@ phases:
         commands:
             - aws s3 rm s3://ss3stock --recursive
             # Copy files from dist to S3
-            - aws s3 cp dist/fluxnews-front s3://ss3stock --recursive
+            - aws s3 cp dist/angular-front s3://ss3stock --recursive
